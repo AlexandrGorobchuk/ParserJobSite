@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Control
 {
-    internal interface ICv
+    public interface IListCv
     {
-        void SearcheCv(string value);
+        Task<List<Cv>> SearcheCv(string value);
     }
 }
