@@ -8,6 +8,7 @@ namespace WpfApp1.Control
 {
     internal class Cv
     {
+
         public string Id { get; set; }
         public string Speciality { get; set; }
         public string City { get; set; }

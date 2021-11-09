@@ -11,7 +11,7 @@ namespace WpfApp1.Control
 {
     internal class CvRabotaUa : Cv, ICv
     {
-        public async void SearcheCv(string value)
+        public async Task SearcheCv(string value)
         {
             IHtmlParser htmlParser = new HtmlParser();
             string path = $"https://rabota.ua/candidates/{value}/вся_украина?period=\"All\"&searchType=\"everywhere\"";

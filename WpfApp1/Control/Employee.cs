@@ -12,7 +12,9 @@ namespace WpfApp1.Control
     {
         public string Name { get; }
         public string SurName { get; }
+
         public CvRabotaUa _CvRabotaUa = new CvRabotaUa();
+
         public CvWorkUa _CvWorkUa = new CvWorkUa();
 
         public Employee(string value)
@@ -21,11 +23,10 @@ namespace WpfApp1.Control
             this.Name = values[0];
             this.SurName = values[1];
         }
-        public void searcheCv() {
-                List<Task> tasks = new List<Task>();
-                tasks.Add(Task.Run(() => _CvRabotaUa.SearcheCv(Name + " " + SurName)));
-                tasks.Add(Task.Run(() => _CvRabotaUa.SearcheCv(Name + " " + SurName)));
-                Task.WaitAll(tasks.ToArray());
+        public async Task searcheCv() {
+            List<Task> tasks = new List<Task>();
+            await _CvRabotaUa.SearcheCv(Name + " " + SurName);
+            await _CvWorkUa.SearcheCv(Name + " " + SurName);
         }
     }
 }

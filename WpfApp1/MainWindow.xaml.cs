@@ -24,10 +24,10 @@ namespace WpfApp1
             textBoxName.Text = x;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Employee employee = new Employee(textBoxName.Text);
-            employee.searcheCv();
+            await employee.searcheCv();
             //textBoxName.Text = employee._CvWorkUa.Id.ToString();
             //textBoxName.Text = textBoxName.Text + Environment.NewLine + employee._CvRabotaUa.Id.ToString();
             Console.ReadLine();

@@ -8,6 +8,6 @@ namespace WpfApp1.Control
 {
     internal interface ICv
     {
-        void SearcheCv(string value);
+        Task SearcheCv(string value);
     }
 }

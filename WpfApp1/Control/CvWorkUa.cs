@@ -11,7 +11,7 @@ namespace WpfApp1.Control
 {
     internal class CvWorkUa : Cv, ICv
     {
-        public async void SearcheCv(string value)
+        public async Task SearcheCv(string value)
         {
             IHtmlParser htmlParser = new HtmlParser();
             string path = $"https://www.work.ua/resumes-{value}?notitle=1&period=6";
