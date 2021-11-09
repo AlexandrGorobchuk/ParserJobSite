@@ -3,6 +3,7 @@ using AngleSharp.Html.Parser;
 using System;
 using System.Net.Http;
 using System.Windows;
+using WpfApp1.Control;
 
 namespace WpfApp1
 {
@@ -40,7 +41,10 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ParseRabotaUa("Аврора");
+            Employee employee = new Employee("Горобчук Александр");
+            textBoxName.Text = "";
+            //textBoxName.Text = employee._CvWorkUa.Id + Environment.NewLine + employee._CvRabotaUa.Id;
+            Console.ReadLine();
         }
     }
 }
