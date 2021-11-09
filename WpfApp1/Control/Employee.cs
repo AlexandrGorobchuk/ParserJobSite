@@ -24,7 +24,6 @@ namespace WpfApp1.Control
             this.SurName = values[1];
         }
         public async Task searcheCv() {
-            List<Task> tasks = new List<Task>();
             await _CvRabotaUa.SearcheCv(Name + " " + SurName);
             await _CvWorkUa.SearcheCv(Name + " " + SurName);
         }

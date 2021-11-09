@@ -2,6 +2,7 @@
 using AngleSharp.Html.Parser;
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using WpfApp1.Control;
@@ -24,10 +25,10 @@ namespace WpfApp1
             textBoxName.Text = x;
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Employee employee = new Employee(textBoxName.Text);
-            await employee.searcheCv();
+            employee.searcheCv();
             //textBoxName.Text = employee._CvWorkUa.Id.ToString();
             //textBoxName.Text = textBoxName.Text + Environment.NewLine + employee._CvRabotaUa.Id.ToString();
             Console.ReadLine();
