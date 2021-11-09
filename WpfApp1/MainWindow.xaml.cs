@@ -3,6 +3,7 @@ using AngleSharp.Html.Parser;
 using System;
 using System.Net.Http;
 using System.Windows;
+using System.Windows.Controls;
 using WpfApp1.Control;
 
 namespace WpfApp1
@@ -20,30 +21,15 @@ namespace WpfApp1
         private void textBoxt()
         {
             string x = "Горобчук Александр";
-            string y = "Горобчук Виктор";
-            textBoxName.Text = x + Environment.NewLine + y;
-        }
-
-        private async void ParseRabotaUa(string value)
-        {
-            IHtmlParser htmlParser = new HtmlParser();
-            string path = $"https://rabota.ua/candidates/{value}/вся_украина?pg=3&period=" + "\"All\"&searchType=\"everywhere\"";
-            using (HttpClient httpClient = new HttpClient())
-            {
-                IDocument html = await htmlParser.ParseDocumentAsync(await httpClient.GetStringAsync(path));
-                var collect = html.QuerySelectorAll(@"section.cv-card");
-                //var ee = collect[0].Text().Split('\n');
-
-                Console.WriteLine(html.TextContent);
-            };
-
+            textBoxName.Text = x;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Employee employee = new Employee("Горобчук Александр");
-            textBoxName.Text = "";
-            //textBoxName.Text = employee._CvWorkUa.Id + Environment.NewLine + employee._CvRabotaUa.Id;
+            Employee employee = new Employee(textBoxName.Text);
+            employee.searcheCv();
+            //textBoxName.Text = employee._CvWorkUa.Id.ToString();
+            //textBoxName.Text = textBoxName.Text + Environment.NewLine + employee._CvRabotaUa.Id.ToString();
             Console.ReadLine();
         }
     }
