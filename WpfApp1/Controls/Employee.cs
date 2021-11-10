@@ -6,8 +6,8 @@ namespace WpfApp1.Control
     {
         public string Name { get; set; }
         public string SurName { get; set; }
-        IListCv ListWorkUa = new ListCvWorkUa();
-        IListCv ListRabotaUa = new ListCvRabotaUa();
+        public ListCvWorkUa ListWorkUa = new ListCvWorkUa();
+        public ListCvRabotaUa ListRabotaUa = new ListCvRabotaUa();
         public Employee(string value)
         {
             string[] values = value.Split(' ');

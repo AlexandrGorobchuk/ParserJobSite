@@ -10,8 +10,10 @@ namespace WpfApp1.Controls
 {
     internal class ApplicationContext: DbContext
     {
-        public DbSet<EmployeeDb> employees { get; set; }
-        public DbSet<HumanDb> humanDb { get; set; }
+        public DbSet<EmployeeDb> EmployeeDbs { get; set; }
+        public DbSet<HumanDb> HumanDbs { get; set; }
+        //public DbSet<RabotaUaDb> RabotaUaDbs { get; set; }
+        //public DbSet<WorkUaDb> WorkUaDbs {  get; set; }
 
         public ApplicationContext() {
             Database.EnsureCreated();

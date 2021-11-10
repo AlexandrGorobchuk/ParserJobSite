@@ -11,7 +11,7 @@ namespace WpfApp1.Control
 {
     internal class ListCvRabotaUa : IListCv
     {
-        List<Cv> cvRabotaUas = new List<Cv>();
+        public List<Cv> cvRabotaUas = new List<Cv>();
         public async Task<List<Cv>> SearcheCv(string value)
         {
             string pathStart = $"https://rabota.ua/candidates/";

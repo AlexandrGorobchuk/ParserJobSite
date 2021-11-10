@@ -12,7 +12,7 @@ namespace WpfApp1.Control
 
     internal class ListCvWorkUa: IListCv
     {
-        List<Cv> cvWorkUas = new List<Cv>();
+        public List<Cv> cvWorkUas = new List<Cv>();
         public async Task<List<Cv>> SearcheCv(string value)
         {
             IHtmlParser htmlParser = new HtmlParser();
